@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viadagem parte 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card" id="card">
+        <button id="button" class="click-text">Clique aqui</button>
+        <div class="content">
+        <h2>🎉 Oiii Olivia linda  🎉</h2>
+        <p>Se beleza fosse crime, você ia ser solta por falta de provas… OXIII CALMA😰😰 (linda, te adoro</p>
+        <p>Sinto falta de falar com você, talvez eu esteja com sdds🙄🙄🙄</p>
+        <p> e como disse cbjr  "esqueça tudo e me beije"</p>
+        </div>
+  </div>
+
+  <script>
+    const button = document.getElementById("button");
+    const card = document.getElementById("card");
+
+    button.addEventListener("click", () => {
+      card.classList.toggle("open");
+
+      if (card.classList.contains("open")) {
+        // Gerar flores caindo
+        for (let i = 0; i < 20; i++) {
+          const flower = document.createElement("div");
+          flower.classList.add("flower");
+          flower.textContent = "🌸";
+          flower.style.left = Math.random() * 100 + "vw";
+          flower.style.animationDuration = (3 + Math.random() * 3) + "s";
+          document.body.appendChild(flower);
+
+          // Remover após a animação
+          setTimeout(() => {
+            flower.remove();
+          }, 6000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #9b1dff, #ff4fd8);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+}
+
+button{
+        cursor: pointer;
+}
+
+.card {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      flex-direction: column;
+}
+
+.card.open {
+      width: 400px;
+      max-height: 400px;  /* aberto */
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      text-align: center;
+      border: 6px double #444;
+      overflow: hidden;
+      transition: max-height 0.8s ease, padding 0.6s ease;
+      padding: 15px;
+      position: relative;
+      z-index: 10;
+}
+
+/* Botão menor "clique aqui" */
+.click-text {
+      display: inline-block;
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      background: #f35fd3;
+      padding: 8px 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Conteúdo interno */
+.content {
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      display: flex;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      
+}
+
+.card.open .content {
+      display: flex;
+      opacity: 1;
+}
+
+/* Flores caindo */
+.flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear forwards;
+      z-index: 1;
+      pointer-events: none;
+}
+
+@keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+}
